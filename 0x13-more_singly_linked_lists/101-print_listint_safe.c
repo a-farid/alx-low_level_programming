@@ -10,6 +10,7 @@ void free_listp(listp_t **head)
 {
 	listp_t *tmp;
 	listp_t *current;
+
 	if (head != NULL)
 	{
 		current = *head;
@@ -31,6 +32,7 @@ void free_listp(listp_t **head)
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t n_node = 0;
+	
 	listp_t *hp, *new, *add;
 
 	hp = NULL;
