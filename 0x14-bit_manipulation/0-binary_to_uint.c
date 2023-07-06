@@ -7,13 +7,13 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
+	unsigned int result = 0;
+	int x = 0;
+
 	if (!b)
 	{
 		return (0);
 	}
-
-	unsigned int result = 0;
-	int x = 0;
 
 	while (b[x] != '\0')
 	{
