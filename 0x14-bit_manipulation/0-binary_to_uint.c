@@ -5,24 +5,27 @@
  * @b : binary.
  * Return: the converted number.
  */
-unsigned int binary_to_uint(const char *b){
-    if(!b){
-        return 0;
-    }
-  
-    unsigned int result = 0;
-    int x = 0;
-  
-    while(b[x] != '\0') {
-    
-        if (b[x] != '0' && b[x] != '1')
-        {
-            return (0);
-        }
+unsigned int binary_to_uint(const char *b)
+{
+	if (!b)
+	{
+		return (0);
+	}
 
-        result = (result << 1) + (b[x] - '0');
-        x++;
-  }
-  return result;
+	unsigned int result = 0;
+	int x = 0;
+
+	while (b[x] != '\0')
+	{
+
+		if (b[x] != '0' && b[x] != '1')
+		{
+			return (0);
+		}
+
+	result = (result << 1) + (b[x] - '0');
+	x++;
+	}
+	return (result);
 }
 
