@@ -7,14 +7,14 @@
  * @argv: argument vector.
  * Return: no return.
  */
-void file_err(int from, int to, char *argv[])
+void file_err(int f_from, int f_to, char *argv[])
 {
-	if (from == -1)
+	if (f_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	if (to == -1)
+	if (f_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
@@ -22,15 +22,15 @@ void file_err(int from, int to, char *argv[])
 }
 
 /**
- * main - check the code for ALX SE.
+ * main - check the code for SE ALX program.
  * @argc: number of arguments.
- * @argv: argument array.
+ * @argv: argument vector.
  * Return: Always 0.
  */
 int main(int argc, char *argv[])
 {
 	int f_from, f_to, err_close;
-	ssize_t len, nwr;
+	ssize_t nchars, nwr;
 	char buf[1024];
 
 	if (argc != 3)
@@ -43,13 +43,13 @@ int main(int argc, char *argv[])
 	f_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	file_err(f_from, f_to, argv);
 
-	len = 1024;
-	while (len == 1024)
+	nchars = 1024;
+	while (nchars == 1024)
 	{
-		len = read(f_from, buf, 1024);
-		if (len == -1)
+		nchars = read(f_from, buf, 1024);
+		if (nchars == -1)
 			file_err(-1, 0, argv);
-		nwr = write(f_to, buf, len);
+		nwr = write(f_to, buf, nchars);
 		if (nwr == -1)
 			file_err(0, -1, argv);
 	}
