@@ -1,15 +1,15 @@
 #include "lists.h"
 
 /**
- * get_dnodeint_at_index - returns num node of a Llist
+ * get_dnodeint_at_index - returns the num node of a Dllist
  *
  * @head: the head of the list
- * @index: index of the nth node
+ * @index: the index of the nth node
  * Return: nth node
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	unsigned int ;
+	unsigned int x;
 
 	if (head == NULL)
 		return (NULL);
