@@ -1,12 +1,10 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_get - Get the value with a key in a ht.
- * @ht: A pointer to the hash table Array.
- * @key: The key to get the value.
- *
- * Return: If the key cannot be matched - NULL.
- *         Otherwise - the value associated with key in ht.
+ * hash_table_get - retrieves a value associated with a key
+ * @ht: pointer to the hash table
+ * @key: key of the hash
+ * Return: value of the hash.
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
